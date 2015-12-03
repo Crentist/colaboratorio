@@ -57,6 +57,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-dependencies"
     compile "org.grails:grails-web-boot"
+    compile 'org.grails.plugins:spring-security-core:3.0.0.M2'
     //compile 'org.grails.plugins:spring-security-core:3.0.0.M2'
     //compile 'org.springframework.security:spring-security-web:4.0.3.RELEASE'
 
