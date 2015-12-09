@@ -43,7 +43,7 @@ class NimbleBootStrap {
 		// Execute any custom Nimble related BootStrap for your application below
 
 		if(!UserBase.findByUsername("user")) {
-			// Create example User account
+			// Create example Subject account
 			def user = InstanceGenerator.user(grailsApplication)
 			user.username = "user"
 			user.pass = 'user'
@@ -51,7 +51,7 @@ class NimbleBootStrap {
 			user.enabled = true
 
 			def userProfile = InstanceGenerator.profile(grailsApplication)
-			userProfile.fullName = "Test User"
+			userProfile.fullName = "Test Subject"
 			userProfile.owner = user
 			user.profile = userProfile
 

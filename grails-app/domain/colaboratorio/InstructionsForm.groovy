@@ -17,7 +17,7 @@ class InstructionsForm {
 	
 	String instructions
 	//int order //order in the workflow -- Order is mantained in Task
-	List possibleAnswers //eg. ('Yes','No','Dunno',...) Order is mantained, just like Task mantains its InstructionsForm order
+	//List possibleAnswers //eg. ('Yes','No','Dunno',...) Order is mantained, just like Task mantains its InstructionsForm order
 	Boolean multipleChoice //whether or not you can choose multiple options. Essentially, the difference between a RadioBox and a CheckBox
 	
 	static	belongsTo	= [task:Task]	// tells GORM to cascade commands: e.g., delete this object if the "parent" is deleted.

@@ -68,7 +68,7 @@ nimble {
 	}
 
 	implementation {
-		user = "bfcrowd.User"
+		user = "bfcrowd.Subject"
 		profile = "bfcrowd.Profile"
 	}
 }

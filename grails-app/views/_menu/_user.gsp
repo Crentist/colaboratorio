@@ -4,7 +4,7 @@
 <%--<sec:ifNotLoggedIn>--%>
 
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			<!-- TODO: integrate Springsource Security etc. and show User's name ... -->
+			<!-- TODO: integrate Springsource Security etc. and show Subject's name ... -->
     		<i class="glyphicon glyphicon-user"></i>
     		<g:message code="security.signin.label"/><b class="caret"></b>
 		</a>

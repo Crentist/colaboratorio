@@ -26,7 +26,7 @@ class ColaboratorController {
 	def index() {
 		if ( getAuthenticatedUser() ) {
 			
-			//User u = User.findByUsername("admin")
+			//Subject u = Subject.findByUsername("admin")
 	        //render "holasxs " + getAuthenticatedUser().myProjects
 			[myProjects: getAuthenticatedUser().myProjects, otherProjects: Project.getAll() - getAuthenticatedUser().myProjects, layout_nosecondarymenu: true]
 			//println "current user : $authenticatedUser"
@@ -109,7 +109,7 @@ class ColaboratorController {
 	}
 	
 	def saveContribution(int recommendationId, String state, String text) {
-		// Acá deberían ser sólo Recommendations a las que el User pueda contribuir
+		// Acá deberían ser sólo Recommendations a las que el Subject pueda contribuir
 		def r = Task.get(recommendationId)
 		Project p = Project.get(r.project.id)
 		//println "state: "+state

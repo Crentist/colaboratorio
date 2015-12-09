@@ -59,7 +59,9 @@ class HomeController {
 			}
 		}**/
 
-		if (getAuthenticatedUser()?.hasRole("Científico Ciudadano")) {
+		render 'Secure access only'
+
+		/**if (getAuthenticatedUser()?.hasRole("Científico Ciudadano")) {
 			render view: "collabIndex"
 		}
 		else
@@ -70,7 +72,7 @@ class HomeController {
 				if (getAuthenticatedUser()?.hasRole("SYSTEM ADMINISTRATOR"))
 					render view: "adminIndex"
 				else				
-					render view: "index"
+					render view: "index"**/
 	}
 	
 	def joinProjectById(int id) {

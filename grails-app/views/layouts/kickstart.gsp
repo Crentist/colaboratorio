@@ -22,13 +22,13 @@
 	<%--<g:javascript library="jquery"/>--%>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
 	</script>
-	<r:require modules="bootstrap"/>
+	<%-- <r:require modules="bootstrap"/>
 	<r:require modules="bootstrap_utils"/>
-	<r:require modules="bfcrowd-resources"/>
-	
+	<r:require modules="bfcrowd-resources"/>--%>
 
-	<r:layoutResources />
-	<g:layoutHead />
+
+	<%--<r:layoutResources />
+	<g:layoutHead />--%>
 	<!--<link rel="stylesheet" href="{resource(dir: 'css', file: 'bfcrowd.css')}" type="text/css">-->
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->

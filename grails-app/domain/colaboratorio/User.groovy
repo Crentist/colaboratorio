@@ -2,7 +2,7 @@ package colaboratorio
 
 //import grails.plugins.rest.client.RestBuilder
 
-class User /**extends grails.plugin.nimble.core.UserBase**/ {
+class User extends com.colaboratorio.Subject {
 
 	// Extend UserBase with your custom values here
 	String facebookID
@@ -17,7 +17,7 @@ class User /**extends grails.plugin.nimble.core.UserBase**/ {
 //	Date	lastUpdated
 	
 //	static	belongsTo	= []	// tells GORM to cascade commands: e.g., delete this object if the "parent" is deleted.
-	static	hasOne		= [profile:Profile]	// tells GORM to associate another domain object as an owner in a 1-1 mapping
+//	static	hasOne		= [profile:Profile]	// tells GORM to associate another domain object as an owner in a 1-1 mapping
 	static	hasMany		= [myContributions:Contribution, myProjects:Project, skippedRecom:Task, ownedProjects: Project]	// tells GORM to associate other domain objects for a 1-n or n-m mapping
 //	static	mappedBy	= []	// specifies which property should be used in a mapping
 	
@@ -80,7 +80,7 @@ class User /**extends grails.plugin.nimble.core.UserBase**/ {
 	}
 	
 
-	//def checkBadges(User u) {
+	//def checkBadges(Subject u) {
 		
 	/**
 	 * if (tiene una recomm)

@@ -5,7 +5,7 @@ import groovy.transform.ToString
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
-class User implements Serializable {
+class Subject implements Serializable {
 
 	private static final long serialVersionUID = 1
 
@@ -18,7 +18,7 @@ class User implements Serializable {
 	boolean accountLocked
 	boolean passwordExpired
 
-	User(String username, String password) {
+	Subject(String username, String password) {
 		this()
 		this.username = username
 		this.password = password

@@ -1,14 +1,15 @@
-import grails.plugin.nimble.InstanceGenerator
+/**import grails.plugin.nimble.InstanceGenerator
 import grails.plugin.nimble.core.AdminsService
 import grails.plugin.nimble.core.Role
 import grails.plugin.nimble.core.RoleService
-import grails.plugin.nimble.core.UserBase
-import bfcrowd.Project
-import bfcrowd.ProjectDefinition
-import bfcrowd.Task
-import bfcrowd.Contribution
-import bfcrowd.User
-import grails.plugins.rest.client.RestBuilder
+import grails.plugin.nimble.core.UserBase**/
+import com.colaboratorio.Role
+import com.colaboratorio.UserRole
+import colaboratorio.Project
+import colaboratorio.ProjectDefinition
+import colaboratorio.Task
+import colaboratorio.User
+//import grails.plugins.rest.client.RestBuilder
 
 class ZecBootStrap {
 	
@@ -17,67 +18,17 @@ class ZecBootStrap {
 	def roleService
 
     def init = { servletContext ->
-		def investigador
-		def cciudadano
-		if(!Role.findByName("Investigador")) {
-			investigador = new Role(name: "Investigador", description: "Encargado de crear proyectos y asignarle tareas a los mismos", protect: false)
-			investigador.save()
-			cciudadano = new Role(name: "Científico Ciudadano", description: "Resuelve las tareas de los proyectos", protect: false)
-			cciudadano.save()
-		}
-		else {
-			investigador = Role.findByName("Investigador")
-			cciudadano = Role.findByName("Científico Ciudadano")
-		}
-		
-		User researcher
-		
-		if(!UserBase.findByUsername("ciudadano")) {
-			def user = InstanceGenerator.user(grailsApplication)
-			user.username = "ciudadano"
-			user.pass = 'ciudadano'
-			user.passConfirm = 'ciudadano'
-			user.enabled = true
 
-			def userProfile = InstanceGenerator.profile(grailsApplication)
-			userProfile.fullName = "Maurice Moss"
-			userProfile.owner = user
-			userProfile.email = "maurice@local.net"
-			user.profile = userProfile
+		def adminRole = new Role('ROLE_ADMIN').save()
+		def userRole = new Role('ROLE_USER').save()
 
-			def savedUser = userService.createUser(user)
-			if (savedUser.hasErrors()) {
-				savedUser.errors.each { log.error(it) }
-				throw new RuntimeException("Error creating user")
-			}
-			
-			roleService.addMember(user, cciudadano)
-		}				
-		
-		if(!UserBase.findByUsername("researcher")) {
-			def user = InstanceGenerator.user(grailsApplication)
-			user.username = "researcher"
-			user.pass = 'researcher'
-			user.passConfirm = 'researcher'
-			user.enabled = true
+		def testUser = new User('me', 'password').save()
 
-			def userProfile = InstanceGenerator.profile(grailsApplication)
-			userProfile.fullName = "Sherlock Holmes"
-			userProfile.owner = user
-			userProfile.email = "sher@lock.net"
-			user.profile = userProfile
+		UserRole.create testUser, adminRole, true
 
-			def savedUser = userService.createUser(user)
-			if (savedUser.hasErrors()) {
-				savedUser.errors.each { log.error(it) }
-				throw new RuntimeException("Error creating user")
-			}
-			
-			roleService.addMember(user, investigador)
-			researcher = user
-		}
-		else 
-			researcher = User.findByUsername("researcher")
+		assert User.count() == 1
+		assert Role.count() == 2
+		assert UserRole.count() == 1
 		
 		if(!Project.findByName("Explorando La Plata")) {
 			/**Project project1 = new Project(name: "Wikipedia tasks", description: "Help us improve the contents on Wikipedia!", xpValue: 25, bonusXP: 25, requiredForBonus: 2, type:"taskProject")

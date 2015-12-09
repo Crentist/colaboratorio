@@ -30,7 +30,7 @@ class UrlMappings {
 		}
 		
 		"/lolo" {
-			controller = "User"
+			controller = "Subject"
 			action = "createUser"
 		}
 

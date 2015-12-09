@@ -1,5 +1,3 @@
-<%@page import="org.apache.shiro.SecurityUtils"%>
-<%@page import="grails.plugin.nimble.core.UserBase"%>
 <nav id="Navbar" class="navbar navbar-fixed-top navbar-inverse"
 	role="navigation">
 	<div class="container">
@@ -15,7 +13,7 @@
 		<a class="navbar-brand" href="${createLink(uri: '/../')}"> <img
 			class="logo" src="${resource(dir:'images', file:'roble.png')}"
 			alt="${meta(name:'app.name')}" width="16px" height="16px" />
-			Científicos Ciudadanos
+			Cientópolis
 		</a>
 		<div class="navbar-brand">-</div>
 		<a class="navbar-brand" href="${createLink(uri: '/')}"> ${meta(name:'app.name')}

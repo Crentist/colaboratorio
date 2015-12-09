@@ -162,9 +162,9 @@ class Project {
 		println resp.json
 	}
 	
-	def getUserBadges(User u) {
-		//def badges = User.getEsos(u.id, this.name)
-		User.holaMundo()
+	def getUserBadges(Subject u) {
+		//def badges = Subject.getEsos(u.id, this.name)
+		Subject.holaMundo()
 	
 	}**/
 		

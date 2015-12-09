@@ -12,7 +12,7 @@ import bfcrowd.*
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 //@TestFor(RecommendationCsvImporter)
-//@Mock([Project, Recommendation, Contribution, User, Profile])
+//@Mock([Project, Recommendation, Contribution, Subject, Profile])
 class RecommendationCsvImporterSpec2 extends GroovyTestCase { //Le agregué un 2 al final porque tiraba error de que la clase ya existe. VER @Giuliano
 
     def setup() {
