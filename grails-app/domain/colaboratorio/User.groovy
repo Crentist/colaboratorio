@@ -1,8 +1,9 @@
 package colaboratorio
 
 //import grails.plugins.rest.client.RestBuilder
+import com.colaboratorio.Subject
 
-class User extends com.colaboratorio.Subject {
+class User extends Subject {
 
 	// Extend UserBase with your custom values here
 	String facebookID

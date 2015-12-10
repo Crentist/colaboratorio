@@ -18,6 +18,10 @@ class Subject implements Serializable {
 	boolean accountLocked
 	boolean passwordExpired
 
+	Subject() {
+		this()
+	}
+
 	Subject(String username, String password) {
 		this()
 		this.username = username

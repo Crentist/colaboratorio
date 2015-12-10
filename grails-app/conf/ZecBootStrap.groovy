@@ -22,14 +22,14 @@ class ZecBootStrap {
 		def adminRole = new Role('ROLE_ADMIN').save()
 		def userRole = new Role('ROLE_USER').save()
 
-		def testUser = new User('me', 'password').save()
+		def testUser = new User('testUser', 'testUser').save()
 
 		UserRole.create testUser, adminRole, true
 
 		assert User.count() == 1
 		assert Role.count() == 2
 		assert UserRole.count() == 1
-		
+		println "dale gato"
 		if(!Project.findByName("Explorando La Plata")) {
 			/**Project project1 = new Project(name: "Wikipedia tasks", description: "Help us improve the contents on Wikipedia!", xpValue: 25, bonusXP: 25, requiredForBonus: 2, type:"taskProject")
 			project1.addOwner(researcher)
@@ -269,7 +269,7 @@ class ZecBootStrap {
 		   ]
 		   
 	   ]**/
-		
+		/**
 		def proyectos = Project.getAll()*.name
 		RestBuilder rest = new RestBuilder()
 		//println proyectos.size()
@@ -297,19 +297,19 @@ class ZecBootStrap {
 					 
 				   ]
 				]
-				
+
 				//println contenido
-				
+
 				resp = rest.post("http://cientopolis.lifia.info.unlp.edu.ar/badges-api/carga-json") {
 					contentType "application/json"
 						json {
 							contenido
 							}
 						}
-				
+
 				//println "resp despues de crear: "+resp.json
 			}
-		}
+		}**/
 		
 		
 		
